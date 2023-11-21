@@ -15,6 +15,7 @@ radian_to_angle = 180.0/np.pi
 angle_to_radian = np.pi/180.0     
 
 
+
 class SPM_FIK(object):    
     def __init__(self, beta=60, alpha_1=45, alpha_2=45):      
         self.dof = 3  
@@ -394,7 +395,6 @@ class TwoSEAs(object):
         # print(joint_list.shape)      
         return path_list, joint_list    
         
-        
     # def cal_dy(theta1, theta2, dtheta1, dtheta2, ddtheta1, ddtheta2):
     #     # Calculate the required joint torques/forces for the given motion  
     #     # Inertia matrix
@@ -555,20 +555,21 @@ if __name__ == "__main__":
     args = parser.parse_args()   
     
     ##################################################  
-    time_t, force_x_t, force_y_t, q_d_1, q_d_2, q_t_1, q_t_2 = load_all_data(file_list=['./data/online_tase/data_105.mat'], args=args)   
-    # time_t, force_x_t, force_y_t, q_d_1, q_d_2, q_t_1, q_t_2 = load_data(file_list=['./data/online_tase/data_112.mat'], args=args)  
-    # time_t, damping_1_t, damping_2_t, stiff_1_t, stiff_2_t, tau_1_t, tau_2_t, tau_o_1_t, tau_o_2_t = load_force_data(args=args)   
+    # time_t, force_x_t, force_y_t, q_d_1, q_d_2, q_t_1, q_t_2 = load_all_data(file_list=['./data/online_tase/data_105.mat'], args=args)   
+    # # time_t, force_x_t, force_y_t, q_d_1, q_d_2, q_t_1, q_t_2 = load_data(file_list=['./data/online_tase/data_112.mat'], args=args)  
+    # # time_t, damping_1_t, damping_2_t, stiff_1_t, stiff_2_t, tau_1_t, tau_2_t, tau_o_1_t, tau_o_2_t = load_force_data(args=args)   
     
-    x_t, y_t = forward_kinematics(angle_t_1=-1 * q_t_1, angle_t_2=-1 * q_t_2)    
-    x_e, y_e = forward_kinematics(angle_t_1=-1 * q_d_1, angle_t_2=-1 * q_d_2)    
-    plot_figure_tase_11(args=args,   
-                        x_e=x_e[:100], y_e=y_e[:100],    
-                        x_t=x_t[:100], y_t=y_t[:100],    
-                        obs_center=np.array([0.0,0.0]),    
-                        via_points=None,  
-                        start=np.array([0.6, 0.2]),    
-                        end=np.array([0.5, 0.1])  
-                        )   
+    # x_t, y_t = forward_kinematics(angle_t_1=-1 * q_t_1, angle_t_2=-1 * q_t_2)    
+    # x_e, y_e = forward_kinematics(angle_t_1=-1 * q_d_1, angle_t_2=-1 * q_d_2)    
+    # plot_figure_tase_11(args=args,   
+    #                     x_e=x_e[:100], y_e=y_e[:100],    
+    #                     x_t=x_t[:100], y_t=y_t[:100],    
+    #                     obs_center=np.array([0.0,0.0]),    
+    #                     via_points=None,  
+    #                     start=np.array([0.6, 0.2]),    
+    #                     end=np.array([0.5, 0.1])  
+    #                     )   
+    
     
     ##################################################
     ################### spm_path #####################  

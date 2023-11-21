@@ -10,14 +10,14 @@ import argparse
 from sklearn.metrics import mean_squared_error        
 from path_planning.kmp.demo_GMR import *      
 from path_planning.utils_functions import *    
-from path_planning.spm_path.spm_kinematics import *    
+from path_planning.spm_path.spm_kinematics import *     
 
 from matplotlib.pyplot import title    
 import seaborn as sns     
 
  
 # sns.set(font_scale=1.5)     
-np.set_printoptions(precision=4)      
+np.set_printoptions(precision=4)       
 
 
 
